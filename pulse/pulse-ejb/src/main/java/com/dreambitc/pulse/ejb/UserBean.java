@@ -8,7 +8,7 @@ import org.mongodb.morphia.Datastore;
 import com.dreambitc.data.domain.User;
 
 @Stateless
-public class UserBean implements UserBeanLocal {
+public class UserBean implements UserLocal {
 
     @Inject
     Datastore datastore;

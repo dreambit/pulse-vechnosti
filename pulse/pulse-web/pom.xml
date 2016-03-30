@@ -1,52 +1,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>pulse</artifactId>
-    <groupId>com.dreambitc</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>pulse-web</artifactId>
-  <packaging>war</packaging>
-  <name>pulse-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>pulse</artifactId>
+        <groupId>com.dreambitc</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>pulse-web</artifactId>
+    <packaging>war</packaging>
+    <name>pulse-web</name>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <!-- <dependency> <groupId>javax.ws.rs</groupId> <artifactId>javax.ws.rs-api</artifactId> <version>2.0.1</version> <scope>provided</scope> 
-      </dependency> -->
-    <!-- <dependency> <groupId>org.jboss.spec.javax.ejb</groupId> <artifactId>jboss-ejb-api_3.1_spec</artifactId> <version>1.0.2.Final</version> 
-      <scope>provided</scope> </dependency> -->
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dreambitc</groupId>
+            <artifactId>pulse-data</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dreambitc</groupId>
+            <artifactId>pulse-ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
-    <dependency>
-      <groupId>com.dreambitc</groupId>
-      <artifactId>pulse-data</artifactId>
-      <version>${project.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.dreambitc</groupId>
-      <artifactId>pulse-ejb</artifactId>
-      <version>${project.version}</version>
-      <type>ejb</type>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <finalName>pulse-web</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
+    <build>
+        <finalName>pulse-web</finalName>
+    </build>
 </project>

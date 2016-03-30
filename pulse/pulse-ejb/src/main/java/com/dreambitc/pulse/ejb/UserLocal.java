@@ -5,8 +5,7 @@ import javax.ejb.Local;
 import com.dreambitc.data.domain.User;
 
 @Local
-public interface UserBeanLocal {
+public interface UserLocal {
     public Iterable<User> getUsers();
-
     public User getUser();
 }

@@ -50,6 +50,10 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
     </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
@@ -58,7 +62,7 @@
         <artifactId>maven-ear-plugin</artifactId>
         <version>2.10.1</version>
         <configuration>
-         <defaultLibBundleDir>lib</defaultLibBundleDir>
+          <defaultLibBundleDir>lib</defaultLibBundleDir>
           <modules>
             <ejbModule>
               <groupId>com.dreambitc</groupId>

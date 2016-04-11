@@ -2,6 +2,7 @@ package com.dreambitc.pulse.ejb;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.sql.DataSource;
 
 import org.mongodb.morphia.Datastore;
 
@@ -10,8 +11,7 @@ import com.dreambitc.data.domain.User;
 @Stateless
 public class UserBean implements UserLocal {
 
-    @Inject
-    Datastore datastore;
+    
 
     public UserBean() {}
 

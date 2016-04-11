@@ -1,34 +1,70 @@
 package com.dreambitc.data.domain;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-@Entity("users")
-@XmlRootElement
-public class User {
+@Entity
+@Table(name = "users")
+@NamedQueries(value = { @NamedQuery(name = User.BY_NAME, query = "SELECT u from User WHERE u.name = :name") })
+public class User implements Serializable {
+    public static final String BY_NAME = "BY_NAME";
+    private static final long serialVersionUID = -1758678891446196335L;
 
     @Id
-    private String id;
-    
+    private int id;
     private String email;
-    @XmlElement
-    private String name;
-    private int age;
+    private String password;
 
-    public User() {
-        // TODO Auto-generated constructor stub
+    @Column(name = "native_lang_id")
+    private Language nativeLanguage;
+
+    @Column(name = "learning_lang_id")
+    private Language learningLanguage;
+
+    public int getId() {
+        return id;
     }
 
-    public User(String name) {
-        this.name = name;
-        this.email = "default";
+    public void setId(int id) {
+        this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return id + " " + name + " " + email;
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Language getNativeLanguage() {
+        return nativeLanguage;
+    }
+
+    public Language getLearningLanguage() {
+        return learningLanguage;
+    }
+
+    public void setNativeLanguage(Language nativeLanguage) {
+        this.nativeLanguage = nativeLanguage;
+    }
+
+    public void setLearningLanguage(Language learningLanguage) {
+        this.learningLanguage = learningLanguage;
+    }
+
 }
